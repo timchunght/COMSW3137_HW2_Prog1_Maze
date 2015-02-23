@@ -215,6 +215,9 @@ public class MazeShell implements ActionListener{
     	{
 	    	for(int i = 0; i < 4; i++)//< 4 because there are 4 directions
 	    	{
+	    		nextX = current[0];
+	    		nextY = current[1];
+	    		
 	    		if(i == 0) //0 means up
 	    		{
 	    			nextY = current[1] + 1;
@@ -240,8 +243,6 @@ public class MazeShell implements ActionListener{
 	    		{
 	    			distance[nextX][nextY] = distance[current[0]][current[1]] + 1;
 	    			drawText(Integer.toString(distance[nextX][nextY]), nextX, nextY, Color.black);
-	    			current[0] = nextX;
-	    			current[1] = nextY;
 	    			counted[nextX][nextY] = new int[]{0};
 	    			
 	    		}
